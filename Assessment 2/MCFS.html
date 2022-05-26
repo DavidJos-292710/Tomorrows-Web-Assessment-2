@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/design.css">
+    <title> MCFS API </title>
+</head>
+<body>
+
+    <!-- Creating the home page with the use of new JS and styling it while implementing a WEB animation -->
+    <main>
+        <section class="HOME">
+            <nav>
+                <h1 id="LOGO"> api hub </h1>
+                <ul class="nav_links">
+                    <li><a href="Main.html"> Home </a></li>
+                    <li><a href="APIs.html"> APIs </a></li>
+                    <li><a href="#"> About </a></li>
+                </ul>
+            </nav>
+            <h2 class="MCFS"> MEDIA & STREAM | Full Screen API </h2>
+        </section>
+    </main>
+
+    <!-- Media Capture & Stream API -->
+    <div class="container">
+        <video id="video" autoplay></video>
+        <div id="Bttn">
+            <button id="start" class="STRT"> start the stream </button>
+            <button id="stop" class="STP"> stop the stream </button>
+        </div>
+        <p class="FS_Function"> <b>"double left click"</b> for Full Screen </p>
+    </div>
+
+
+    <script>
+        // Media Stream + Full Screen API
+        const screen = document.getElementById("video");
+        const start = document.getElementById("start");
+        const stop = document.getElementById("stop");
+
+        var displayOptions = {
+            video:{
+                cursor: 'always'
+            },
+            audio: false
+        }
+
+        start.addEventListener("click", function(e){
+            startCapture();
+        }, false)
+
+        stop.addEventListener("click", function(e){
+            stopCapture();
+        }, false)
+
+        async function startCapture(){
+            try{
+                screen.srcObject = await navigator.mediaDevices.getDisplayMedia(displayOptions);
+            }catch(err){
+                console.error("Error" + err);
+            }
+        }
+
+        function stopCapture(e){
+            let tracks = screen.srcObject.getTracks();
+
+            tracks.forEach(track => track.stop())
+            
+            screen.srcObject = null;
+        }
+
+        // The full screen function that connects with the media screen
+        function getFullscreenElement()
+        {
+            return document.fullscreenElement
+                || document.webkitFullscreenElement
+                || document.mozFullscreenElement
+                || document.mozFullscreenElement;
+        }
+
+        function toggleFullscreen() 
+        {
+            if(getFullscreenElement())
+            {
+                document.exitFullscreen();
+            }
+            else
+            {
+                document.getElementById("video").requestFullscreen().catch(console.log);
+            }
+        }
+
+        document.addEventListener("dblclick", () => {
+            toggleFullscreen();
+        });
+
+        document.addEventListener("fullscreenchange", () => {
+            console.log("full screen changed!");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/design.css">
+    <title> Web Animation API </title>
+</head>
+<body>
+    <main>
+        <section class="HOME">
+            <nav>
+                <h1 id="LOGO"> api hub </h1>
+                <ul class="nav_links">
+                    <li><a href="Main.html"> Home </a></li>
+                    <li><a href="APIs.html"> APIs </a></li>
+                    <li><a href="#"> About </a></li>
+                </ul>
+            </nav>
+            <h2 class="TITLE"> web animation api </h2>
+        </section>
+    </main>
+
+    <h2 class="instruct"> Click the screen to see the animation </h2>
+
+    <!-- Web Animation API with the use of JS -->
+    <div class="anim_container">
+        <div class="ball_circle"></div>
+        <div class="ball_circle_shadow"></div>
+    </div>
+
+    <div class="anim_container2">
+        <div class="circle"></div>
+        <div class="shadow"></div>
+    </div>
+
+    <div class="anim_container3">
+        <div class="Cresent"></div>
+        <div class="CT_shadow"></div>
+    </div>
+
+    <div class="container2">
+
+    </div>
+
+    <script>
+        // Web Animation for ball movement
+        const ballKeyframes = [
+            {transform: 'translateY(0px)'},
+            {transform: 'translateY(-100px)', offset: 0.35},
+            {transform: 'translateY(-120px)', offset: 0.6},
+            {transform: 'translateY(-120px)', offset: 0.7},
+            {transform: 'translateY(0px)'}
+        ];
+
+        const shadowKeyframes = [
+            {transform: 'scale(1)'},
+            {transform: 'scale(0.5)', offset: 0.35},
+            {transform: 'scale(o.35)', offset: 0.6},
+            {transform: 'scale(0.35)', offset: 0.7},
+            {transform: 'scale(1)'}
+        ];
+
+
+        const balloKeyframe = [
+            {transform: 'translateY(0px)'},
+            {transform: 'translateY(-90px)', offset: 0.35},
+            {transform: 'translateY(-200px)', offset: 0.5},
+            {transform: 'translateY(-200px)', offset: 0.6},
+            {transform: 'translateY(0px)'}
+        ];
+
+        const CTKeyframes = [
+            {transform: 'scale(1)'},
+            {transform: 'scale(0.2)', offset: 0.35},
+            {transform: 'scale(o.35)', offset: 0.55},
+            {transform: 'scale(0.35)', offset: 0.66},
+            {transform: 'scale(1)'}
+        ];
+
+        // Creating Configuration for the animation duration and iteration
+        const config = {
+            duration: 800,
+            iterations: Infinity
+        }
+
+        // Adding a const for the animation for the 3 animation Divs
+        const ballAnimation = document.querySelector('.ball_circle').animate(ballKeyframes, config);
+
+        const shadowAnimation = document.querySelector('.ball_circle_shadow').animate(shadowKeyframes, config);
+
+        const balla = document.querySelector('.circle').animate(ballKeyframes, config);
+
+        const shadowic = document.querySelector('.shadow').animate(shadowKeyframes, config);
+
+        const Cresent = document.querySelector('.Cresent').animate(balloKeyframe, config);
+
+        const Cresents_shadow = document.querySelector('.CT_shadow').animate(CTKeyframes, config);
+
+
+        // Pausing the Animation
+        ballAnimation.pause();
+        shadowAnimation.pause();
+        balla.pause();
+        shadowic.pause();
+        Cresent.pause();
+        Cresents_shadow.pause();
+        
+        // Animation Starts when the event has been started
+        document.addEventListener('click', ()=> {
+            ballAnimation.play();
+            shadowAnimation.play();
+            balla.play();
+            shadowic.play();
+            Cresent.play();
+            Cresents_shadow.play();
+        });
+
+    </script>
+</body>
+</html>

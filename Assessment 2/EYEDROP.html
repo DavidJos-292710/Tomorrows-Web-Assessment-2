@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/design.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <title> EYE-DROPPER API </title>
+</head>
+<body>
+    <main>
+        <section class="HOME">
+            <nav>
+                <h1 id="LOGO"> api hub </h1>
+                <ul class="nav_links">
+                    <li><a href="Main.html"> Home </a></li>
+                    <li><a href="APIs.html"> APIs </a></li>
+                    <li><a href="#"> About </a></li>
+                </ul>
+            </nav>
+        </section>
+    </main>
+    <div class="position">
+        <h3 class="HEADING"> EYE DROPPER API <b>| PICK COLOR </b></h3>
+        <div class="grid">
+            <div class="text_lan">
+                <div class="instruction">
+                    Want to know what specific colour from a specific image? <b> FEAR NOT </b> the <b> EYE DROPPER API </b> got you covered! Just simply upload an Image or roam around the webpage or page to find your, then click on the button then hunt for your prey aka colour. <b> ʕ•́ᴥ•̀ʔっ♡  </b>
+                </div>
+
+                <div class="upload">
+                    <label class="custom-file-upload">
+                        <input type="file" onchange="readURL(this)"/> UPLOAD
+                    </label>
+                </div>
+        
+                <button id="select-color" class="select">SELECT</button>
+                <div id="result">#FFFFFF</div>
+            </div>
+            <div class="imageholder">
+                <img id="img" class="image" src="/IMAGES/tokyo.jpg" alt="Image" />
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById("select-color").addEventListener("click", () => {
+        const resultElement = document.getElementById("result");
+
+        if (!window.EyeDropper) {
+          resultElement.textContent =
+            "Your browser does not support the EyeDropper API";
+          return;
+        }
+
+        const eyeDropper = new EyeDropper();
+
+        eyeDropper
+          .open()
+          .then((result) => {
+            resultElement.textContent = result.sRGBHex;
+            resultElement.style.color = result.sRGBHex;
+          })
+          .catch((e) => {
+            resultElement.textContent = e;
+          });
+      });
+
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            $('#img').attr('src', e.target.result);
+          };
+
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>
+</body>
+</html>
+
+

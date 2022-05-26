@@ -1,0 +1,611 @@
+// Importing Fonts into the HTML
+@import url('https://fonts.googleapis.com/css2?family=Akshar&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+// Creating Variables for the fonts and styling
+$Font_1: 'Akshar', sans-serif;
+$Font_2: 'Montserrat', sans-serif;
+$Font_3: 'Source Sans Pro', sans-serif;
+
+// Colors for the entire html pages
+$Color_1: #2A3439;
+$Color_2: #A8A9AD;
+$Color_3: #DEE2E3;
+$Color_4: #A2B6C6;
+$Color_5: #73A9C2;
+$Color_6: #4E878C;
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: #354952;
+}
+
+// Background and Navigation bar being styled
+main
+{
+    text-transform: uppercase;
+}
+
+// .HOME
+// {
+//     min-height: 100vh;
+//     padding: 0rem 0rem;
+// }
+
+nav
+{
+    font-family: $Font_2;
+    padding: 0rem 3rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    min-height: 10vh;
+    background-color: $Color_1;
+}
+
+.nav_links
+{
+    display: flex;
+    list-style: none;
+}
+
+.nav_links li
+{
+    padding-left: 5rem;
+    font-size: 1.2rem;
+}
+
+.nav_links li a
+{
+    color: $Color_5;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#LOGO
+{
+    font-family: $Font_1;
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    color: $Color_4;
+    font-weight: 400;
+}
+
+.SLOGAN
+{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-40%);
+    font-size: 3rem;
+    color: $Color_5;
+    font-family: $Font_2;
+    letter-spacing: 0.2rem;
+}
+
+.BLOG
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-40%);
+    font-size: 3rem;
+    color: $Color_5;
+    font-family: $Font_2;
+    letter-spacing: 0.2rem;
+}
+
+// Styling the API page
+.TITLE  
+{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-20%);
+    font-size: 3rem;
+    color: $Color_5;
+    font-family: $Font_2;
+    letter-spacing: 0.2rem;
+}
+
+.DESIGN
+{
+    color: $Color_4;
+    font-family: $Font_2;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+// First Designing the list of APIs
+.APIS1
+{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    margin-top: 4vh;
+}
+
+.APIS2
+{
+    position: absolute;
+    top: 43%;
+    left: 10%;
+    margin-top: 9vh;
+}
+
+.APIS3
+{
+    position: absolute;
+    top: 65%;
+    left: 10%;
+    margin-top: 11vh;
+}
+
+.APIS4
+{
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    margin-top: 19vh;
+}
+
+.API_listing, .DESCRIP_container
+{
+    font-family: $Font_2;
+    color: $Color_5;
+}
+
+.DESCRIP_container
+{
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+// Button Styling 
+.TRO
+{
+    font-family: $Font_1;
+    padding: 1.5vh 3vw;
+    border-radius: 50px;
+    background-color: $Color_1;
+    border: none;
+    box-shadow: 2px 2px 3px $Color_5;
+    color: $Color_5;
+    text-decoration: none;
+    font-family: $Font_2;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+// Creating and styling the Sliding animation that will be used in JS file
+.INTRODUCTION
+{
+    background-color: $Color_1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SLIDER
+{
+    background-color: $Color_1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+}
+
+.INNER_INTROTXT
+{
+    color: $Color_4;
+    font-family: $Font_2;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.hide
+{
+    background: $Color_1;
+    overflow: hidden;
+}
+
+.hide span
+{
+    transform: translateY(100%);
+    display: inline-block;
+}
+
+// Styling the Dad Jokes Page
+.DDJK
+{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-40%);
+    font-size: 3rem;
+    color: $Color_5;
+    font-family: $Font_2;
+    letter-spacing: 0.2rem;
+}
+
+.container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-40%);
+}
+
+.DLC
+{
+    margin-top: 20rem;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: $Color_4;
+    font-family: $Font_1;
+}
+
+.Joke_Container
+{
+    font-family: $Font_2;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    font-size: 4rem;
+    text-align: center;
+    color: $Color_1;
+}
+
+.GenBttn
+{
+    border: none;
+    display: inline-flex;
+    background-color: $Color_4;
+    border-radius: 20px;
+    padding: 20px 30px;
+    margin-top: 5rem;
+    cursor: pointer;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.GenBttn::active
+{
+    transform: scale(0.99);
+}
+
+.GenBttn::focus
+{
+    outline: 0;
+}
+
+// Styling the Media Capture and Stream Page
+.MCFS
+{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-40%);
+    font-size: 3rem;
+    color: $Color_5;
+    font-family: $Font_2;
+    letter-spacing: 0.2rem;
+}
+
+#video
+{
+    border: 3.5px solid $Color_1;
+    width: 90%;
+    height: 500px;
+    margin: 20px;
+    margin-top: 25vh;
+    border-radius: 5px;
+    background-color: #96c5db;
+}
+
+#Bttn
+{
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#start, #stop
+{
+    border: none;
+    padding: 1.5em;
+    background-color: $Color_1;
+    cursor: pointer;
+    color: $Color_5;
+    border-radius: 10px;
+    font-weight: 100;
+    margin: 10px;
+    text-transform: uppercase;
+}
+
+.FS_Function
+{
+    text-transform: uppercase;
+    color: $Color_5;
+    font-family: $Font_2;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+b
+{
+    color: $Color_2;
+}
+
+// Web animation design and styling of creating the variables
+// Variable 1
+.anim_container
+{
+    align-items: center;
+    position: absolute;
+    top: 67%;
+    left: 50%;
+    transform: translate(-50%,-30%);
+    justify-content: center;
+}
+
+.ball_circle
+{
+    background-color: $Color_2;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.ball_circle_shadow
+{
+    background-color: $Color_1;
+    width: 90px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+// Variable 2
+.anim_container2
+{
+    align-items: center;
+    position: absolute;
+    top: 65%;
+    left: 35%;
+    transform: translate(-70%,-35%);
+    justify-content: center;
+}
+
+.circle
+{
+    background-color: $Color_1;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.shadow
+{
+    background-color: #73A3C2;
+    width: 80px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+// Variable 2
+.anim_container3
+{
+    align-items: center;
+    position: absolute;
+    top: 60%;
+    left: 64%;
+    transform: translate(-50%,-30%);
+    justify-content: center;
+}
+
+.Cresent
+{
+    background-color: $Color_2;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.CT_shadow
+{
+    background-color: $Color_3;
+    width: 150px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.instruct
+{
+    color: $Color_4;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    font-family: $Font_2;
+    letter-spacing: 2px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+// Designing and styling the EYE-DROPPER API HTML PAGE
+.position
+{
+    margin: 64px 120px;
+    font-family: $Font_3;
+}
+
+.HEADING
+{
+    font-size: 40px;
+    font-weight: 600;
+    color: $Color_3;
+    margin:  0 0 29px;
+    font-family: $Font_2;
+}
+
+b
+{
+    font-weight: 600;
+    color: #65B891;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 50px;
+}
+
+.text_lan {
+    font-size: 25px;
+    font-family: $Font_3;
+    color: #fff;
+}
+
+.instruction {
+    margin-bottom: 50px;
+}
+
+.select {
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 13px 0;
+    font-weight: 600;
+    font-size: 20px;
+    color: #00241B;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.upload {
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 13px 0;
+    font-weight: 600;
+    font-size: 20px;
+    color: $Color_3;
+    background-color: $Color_1;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.upload:hover {
+    background-color: $Color_6;
+    transition: ease-in-out 1s;
+}
+
+.select {
+    background-color: $Color_1;
+    border-radius: 10px 10px 0 0;
+    color: $Color_3;
+}   
+
+.select:hover {
+    background-color: $Color_3;
+    color:  $Color_1;
+    transition: ease-in-out 1s;
+}
+
+#result {
+    border: none;
+    border-radius: 0 0 10px 10px;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+    color: $Color_1;
+    font-weight: 600;
+    font-size: 25px;
+    text-transform: uppercase;
+    background-color: #fff;
+}
+
+.image {
+    background-color: #4E878C;
+    height: 670px;
+    border-radius: 25px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+// .grid_ocntainer
+// {
+//     display: grid;
+//     grid-template-columns: 1fr 3fr;
+//     grid-gap: 50px;
+// }
+
+// .text_container
+// {
+//     font-size: 17px;
+// }
+
+// .instruct_container
+// {
+//     margin-bottom: 50px;
+// }
+
+// .select
+// {
+//     border: none;
+//     border-radius: 10px;
+//     width: 100%;
+//     padding: 13px 0;
+//     font-weight: 600;
+//     font-size: 20px;
+//     color: #00241B;
+// }
+
+// input[type="file"] {
+//     display: none;
+// }
+
+// .uploading
+// {
+//     border: none;
+//     border-radius: 10px;
+//     width: 100%;
+//     padding: 13px 0;
+//     font-weight: 600;
+//     font-size: 20px;
+//     color: #00241B;
+//     background-color: #65B891;
+//     text-align: center;
+//     margin-bottom: 18px;
+// }
